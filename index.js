@@ -13,27 +13,37 @@
 function navigate(commands) {
   console.log(commands);
 
+  // use array to push and pop list of pages
+  // or just move the indexCounter...?
+  let indexCounter = 0;
+
   // hold current
-  let current = '';
+  // const current = ["home"];
 
   // check how many backs
-  let backCounter = 0;
+  // let backCounter = 0;
 
   // check how many forwards
-  let forwardCounter = 0;
+  // let forwardCounter = 0;
 
   // Loop through commands arr
   for (let i = 0; i < commands.length; i++) {
+    // current.push()
     console.log(commands[i]);
-    // check commands for page names and store
     if (commands[i].includes('Visit')) {
       // console.log(commands[i])
-      // refresh current to latest
-      current = commands[i];
+      // current.push(commands[i])
+      indexCounter++;
     }
-
-    // check for
+    if (commands[i].includes('Back')) {
+      // current.pop();
+      indexCounter--;
+    }
+    if (commands[i].includes('Forward')) {
+      indexCounter++;
+    }
   }
-  console.log(current);
-  return commands;
+  console.log(indexCounter);
+  console.log(commands[indexCounter]);
+  return commands[indexCounter];
 }
