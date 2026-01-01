@@ -9,3 +9,18 @@
 // "Back": Takes you to the previous page in your history or stays on the current page if there isn't one.
 // "Forward": Takes you forward in the history to the page you came from or stays on the current page if there isn't one.
 // For example, given ["Visit About Us", "Back", "Forward"], return "About Us".
+
+function navigate(commands) {
+  console.log(commands);
+
+  let navigateTo = '';
+  for (let i = 0; i < commands.length; i++) {
+    console.log(commands[i]);
+    if (commands[i].includes('Visit')) {
+      // console.log(commands[i])
+      navigateTo += commands[i];
+    }
+  }
+  console.log(navigateTo);
+  return commands;
+}
