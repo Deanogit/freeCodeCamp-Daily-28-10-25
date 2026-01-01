@@ -13,14 +13,27 @@
 function navigate(commands) {
   console.log(commands);
 
-  let navigateTo = '';
+  // hold current
+  let current = '';
+
+  // check how many backs
+  let backCounter = 0;
+
+  // check how many forwards
+  let forwardCounter = 0;
+
+  // Loop through commands arr
   for (let i = 0; i < commands.length; i++) {
     console.log(commands[i]);
+    // check commands for page names and store
     if (commands[i].includes('Visit')) {
       // console.log(commands[i])
-      navigateTo += commands[i];
+      // refresh current to latest
+      current = commands[i];
     }
+
+    // check for
   }
-  console.log(navigateTo);
+  console.log(current);
   return commands;
 }
