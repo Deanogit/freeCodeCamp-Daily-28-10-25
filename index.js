@@ -56,7 +56,7 @@ function navigate(commands) {
 
   for (let i = 0; i < commands.length; i++) {
     // visit page
-    if (commands[i].includes('Visit')) {
+    if (commands[i].startsWith('Visit')) {
       // push currentPage into back history
       backStack.push(currentPage);
       // update current page to the new page
@@ -64,13 +64,13 @@ function navigate(commands) {
       console.log(currentPage);
       // empty forwardStack
       forwardStack.length = 0;
-    } else if (commands[i].includes('Back')) {
+    } else if (commands[i].startsWith('Back')) {
       // if backHistory isnt empty, push currentPage into forwardHistory
       if (backStack.length > 0) {
         forwardStack.push(currentPage);
         currentPage = backStack.pop();
       }
-    } else if (commands[i].includes('Forward')) {
+    } else if (commands[i].startsWith('Forward')) {
       if (forwardStack.length > 0) {
         backStack.push(currentPage);
         currentPage = forwardStack.pop();
